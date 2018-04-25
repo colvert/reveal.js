@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Orange ONAP OpenLab</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<textarea data-template>
+						# ONAP OpenLab
+						14/05/2018
+
+						[M.Richomme](https://twitter.com/morganrichomme), Orange
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						# Agenda
+						* Introduction
+						* Fact & Figures
+						* How to join
+						* Focus on NewPortal
+						* Focus on Testing activities
+						* Next steps
+					</textarea>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							# Introduction
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## A Telco need
+							A public place to work on SDN/NFV Orchestration
+							* Internally
+							* With external vendors
+							* With other Telcos
+							* With academics
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## OpenLab must be
+							* Open
+							* Secured
+							* Stable
+							* Easily reinstallable
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## The OPNFV experience
+							* Resources used for CI/CD Colorado validation
+							* Used to integrate OAI vEPC (Rebaca)
+							* Open to community members
+							* Used for demo during Summit
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Orange ONAP OpenLab
+							* OPNFV XCI/Bifrost (now deprecated)
+							* Kolla Ansible Pike (os-nosdn-nofeature-ha)
+							* ONAP Amsterdam (latest stable) based on Heat
+							* Additional ONAP are deployed daily (CI/CD)
+							  * Heat: Amsterdam heat & master daily
+							  * OOM: Amsterdam daily
+						</textarea>
+					</section>
+					<section data-markdown>
+						![archi](./img/archi.png)
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							# ONAP OpenLab
+							## Facts & figures
+						</textarea>
+					</section>
+
+					<section data-markdown>
+						![map](./img/map.png)
+						<h2>Lab located in Lannion (France)</h2>
+
+						[OpenStreetMap link](https://umap.openstreetmap.fr/fr/map/onap-orange-openlab_198724#8/49.175/-1.428)
+					</section>
+
+
+					<section>
+						<h2>Orange OpenLab</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Server</th>
+									<th>Type</th>
+									<th>Cores</th>
+									<th>Memory</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>jumphost</td>
+									<td>VM</td>
+									<td>8</td>
+									<td>8G</td>
+								</tr>
+								<tr>
+									<td>Controller1-2-3</td>
+									<td>Baremetal (Dell R630)</td>
+									<td>16</td>
+									<td>64G</td>
+								</tr>
+								<tr>
+									<td>Compute1-2-3-4</td>
+									<td>Baremetal (Dell R630)</td>
+									<td>32</td>
+									<td>256G</td>
+								</tr>
+								<tr>
+									<td>Compute5</td>
+									<td>Baremetal (Huawei E9000 blade)</td>
+									<td>56</td>
+									<td>256G</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section data-markdown>
+						<textarea data-template>
+							## OPNFV Functest tests run daily (stable & master)
+							* Healthcheck
+							* Smoke (Tempest/Rally/Refstack/Patrole/..)
+							* VNF (Clearwater IMS, vyosvrouter, OAI EPC)
+							* 3h30 of daily tests on the infrastructure
+						</textarea>
+					</section>
+
+					<section data-markdown>
+						<textarea data-template>
+							## ONAP user distribution (25/04/2018)
+							58 accounts created
+
+							![stat](./img/stat1.png)
+						</textarea>
+					</section>
+
+					<section data-markdown>
+						<textarea data-template>
+							### ONAP user evolution (25/04/2018)
+							launch date: 14/2/2018
+							![stat](./img/stat2.png)
+						</textarea>
+					</section>
+
+				</section>
+
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							# Current situation
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Service models
+							![stat](./img/stat3.png)
+						</textarea>
+					</section>
+				</section>
+				<section>Slide 1</section>
+				<section>Slide 2</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
