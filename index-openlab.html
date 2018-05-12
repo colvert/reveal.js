@@ -53,7 +53,7 @@
 					<section data-markdown>
 						<textarea data-template>
 							## A Telco need
-							A public place to work on SDN/NFV Orchestration
+							A neutral public place to work on SDN/NFV Orchestration
 							* Internally
 							* With external vendors
 							* With other Telcos
@@ -75,13 +75,13 @@
 							* Resources used for CI/CD Colorado validation
 							* Used to integrate OAI vEPC (Rebaca)
 							* Open to community members
-							* Used for demo during Summit
+							* Used for demos during Summit
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
 							## Orange ONAP OpenLab
-							* OPNFV XCI/Bifrost (now deprecated)
+							* OPNFV XCI/Bifrost (experimental)
 							* Kolla Ansible Pike (os-nosdn-nofeature-ha)
 							* ONAP Amsterdam (latest stable) based on Heat
 							* Additional ONAP are deployed daily (CI/CD)
@@ -176,24 +176,227 @@
 							![stat](./img/stat2.png)
 						</textarea>
 					</section>
-
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							# How to Join?
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Who can access?
+							* Any ONAP contributor: test, integration, VNF onboarding
+							* Orange can revoke the access if resources are used in an unappropriate way
+							* No SLA (Best Effort)
+							* Open IRC chan: #onap-orange
+							* Mailing list: onap-openlab AT list.orange.com
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## How to access?
+							Send a mail to onap-openlab@list.orange.com with:
+							* Name
+							* Company/university
+							* Nature of the work you want to do on ONAP
+							* Public ssh key
+							* Start and end date
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Then...
+							* You will be notified by mail that your account has been created
+							* SSH access to ONAP rebound
+							  * Openstack of the onap-vnfs tenant
+							  * README file with all the end points (and there are a lot..)
+							* Access to HTTP portals (through SSH tunnel)
+						</textarea>
+					</section>
+					<section>
+						<textarea data-template>
+							## ONAP main portal
+							![stat](./img/portal_page.png)
+						</textarea>
+					</section>
 				</section>
 
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							# Current situation
+							# Focus on NewPortal
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Service models
-							![stat](./img/stat3.png)
+							## Why a new Portal
+							* Mainly to
+							  * learn
+							  * test
+							  * monitor
+							* Nothing really new / VID and other existing portals
+							* Can be used to automatically deployed vIMS or vMRF (see next section)
+							* Can be used for NBI tests (see next sections)
+						</textarea>
+					</section>
+					<section data-markdown>
+						![stat](./img/stat3.png)
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## VNF creation
+							![stat](./img/newportal2.png)
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## NBI
+							![stat](./img/newportal3.png)
 						</textarea>
 					</section>
 				</section>
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							# Focus on Testing activities
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Example 1
+							### vProbes with Astelia
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### Use case description
+							* Deploy a vIMS (Clearwater) and vProbe system using ONAP
+							* Create (Manually) port mirroring
+							* Generate Traffic (looping Clearwater test scenarios)
+							* Generate CDRs
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Example 2
+							### vMRF with Radisys
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### Use case description
+							* Deploy a vMRF using ONAP
+							* Modify the configuration using App-c (Netconf/Yang)
+							* Generate traffic (sipp)
+							* Configure VES to collect vMRF events
+							* Generate graphs based on events (not possible to manage a full loop with Amsterdam)
+							* Demo shown during last MWC
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Example 3
+							### Automation of onboarding (Orange)
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### Development of a little python framework
+							* Deploy any VNF based on their service template
+							  * Create Service Instance
+							  * Create VNF
+							  * Manage SDNC preload
+							  * Create VF/Module
+							* Tested with vIMS, vMRF (tests with vFW in progress..some issues due to hardcoded stuff)
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Example 4
+							### NBI (Orange)
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### Test new NBI feature introduced in Beijing
+							* Project: externalapi https://git.onap.org/externalapi/nbi/
+							* Implementation of TMF APIs
+							* Tests capabilities included in Python framework
+							* Demo planned at TMF forum (this week)
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Example 5
+							### ONAP Robot Xtesting (Orange)
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### Integration of Robot tests in XTesting framework
+							* Dockerization of the tests (for CI/CD)
+							* Consistent reporting (same than the infra)
+							* Slicing of the tests
+							* Supervision of the tests more modular
+							* https://github.com/Orange-OpenSource/xtesting-onap-robot
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## ONAP Xtesting
+							![stat](./img/onap_xtesting.png)
+						</textarea>
+					</section>					
+					<section data-markdown>
+						<textarea data-template>
+							## Example N
+							### we do not control what is done by all the members...
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							# Next steps
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Next steps (1/3)
+							* Expose ONAP/OOM/Amsterdam and ONAP/Heat/Master daily tests (XCI)
+							* Create an ONAP Xtesting docker for VNFs (and include it in daily CI/CD)
+							* Share the code in official repo when it will be possible
+							* Contribute to slimification (already done with Robot VM from 2Go -> 80 Mo)
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Next steps (2/3)
+							* Work on a test case including a loop (vMRF?)
+							* Work on more "SDN" test cases
+							* Work on ONAP Ansible installer (~ ONAP kolla)
+							* Work on Multisites scenario
+							* Work on backup/restore scenarios
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Next steps (3/3)
+							* Suppport internal PoCs
+							* Support interoperability testing
+							* Support integration ONAP in XCI
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							# Merci - Thank you - 谢谢 - תודה - شكرا - спасибо
+						</textarea>
+					</section>
+				</section>
 			</div>
 		</div>
 
