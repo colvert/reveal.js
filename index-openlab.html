@@ -160,6 +160,12 @@
 							* 3h30 of daily tests on the infrastructure
 						</textarea>
 					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### OpenLab Infra CI
+							![CI](./img/infra-ci-pipeline.png)
+						</textarea>
+					</section>
 					<section>
 						<pre><code data-trim data-noescape>
 					2018-04-20 08:58:37,823 - xtesting.ci.run_tests - INFO - Xtesting report:
@@ -200,6 +206,20 @@
 
 					<section data-markdown>
 						<textarea data-template>
+							### OpenLab ONAP CI
+							* Robot tests run daily using ONAP/XTesting
+							* Results stored in OPNFV Test DB through test API
+							* Results displayed in different pages
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### ONAP robot test supervizion
+							![stat](./img/openlab-onap_supervizion.png)
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
 							## ONAP user distribution (25/04/2018)
 							58 accounts created
 
@@ -214,6 +234,7 @@
 							![stat](./img/stat2.png)
 						</textarea>
 					</section>
+
 				</section>
 				<section>
 					<section data-markdown>
@@ -263,8 +284,7 @@
 						<textarea data-template>
 							## ONAP Community lab
 							* User management automated through Ansible roles
-							![stat](./img/open_lab_access.png)
-							* Code could be shared if interest from other ONAP lab owners
+							![stat](./img/openlab-access.png)
 						</textarea>
 					</section>
 
@@ -491,7 +511,7 @@
 						<textarea data-template>
 							## Next steps (1/2)
 							* Expose ONAP/OOM/Amsterdam and ONAP/Heat/Master daily tests (XCI)
-							* Create an ONAP Xtesting docker for VNFs (and include it in daily CI/CD)
+							* Create an ONAP XTesting docker for VNFs (and include it in daily CI/CD)
 							* Share the code in official repos when it will be possible
 							* Contribute to slimification (already done with Robot VM from 2Go -> 80 Mo)
 							* Support ONAP integration in OPNFV XCI
@@ -503,7 +523,8 @@
 							* Automate a test case including a loop (vMRF?)
 							* Develop a "SDN" test case
 							* Work on ONAP Ansible installer (~ ONAP kolla)
-							* Add monitoring & backup/restore capabilities
+							* Improve monitoring/supervizion capabilities
+							* Improve backup/restore capabilities
 							* Initiate studies on a Multisites test case
 						</textarea>
 					</section>
