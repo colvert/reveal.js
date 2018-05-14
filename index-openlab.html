@@ -40,7 +40,7 @@
 						* Fact & Figures
 						* How to join
 						* Focus on NewPortal
-						* Focus on Testing activities
+						* Focus on OpenLab activities
 						* Next steps
 					</textarea>
 				</section>
@@ -152,13 +152,51 @@
 
 					<section data-markdown>
 						<textarea data-template>
-							## OPNFV Functest tests run daily (stable & master)
+							### OPNFV Functest tests run daily
+							#### (stable & master alternatively)
 							* Healthcheck
 							* Smoke (Tempest/Rally/Refstack/Patrole/..)
 							* VNF (Clearwater IMS, vyosvrouter, OAI EPC)
 							* 3h30 of daily tests on the infrastructure
 						</textarea>
 					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+					2018-04-20 08:58:37,823 - xtesting.ci.run_tests - INFO - Xtesting report:
+
+					+------------------------------+------------------+---------------+------------------+----------------+
+					|          TEST CASE           |     PROJECT      |      TIER     |     DURATION     |     RESULT     |
+					+------------------------------+------------------+---------------+------------------+----------------+
+					|          vping_ssh           |     functest     |     smoke     |      00:46       |      PASS      |
+					|        vping_userdata        |     functest     |     smoke     |      00:36       |      PASS      |
+					|     tempest_smoke_serial     |     functest     |     smoke     |      16:01       |      PASS      |
+					|         rally_sanity         |     functest     |     smoke     |      25:49       |      PASS      |
+					|       refstack_defcore       |     functest     |     smoke     |      07:32       |      PASS      |
+					|           patrole            |     functest     |     smoke     |      04:40       |      PASS      |
+					|         snaps_smoke          |     functest     |     smoke     |      58:05       |      PASS      |
+					|             odl              |     functest     |     smoke     |      00:00       |      SKIP      |
+					|         odl_netvirt          |     functest     |     smoke     |      00:00       |      SKIP      |
+					|        neutron_trunk         |     functest     |     smoke     |      00:00       |      SKIP      |
+					+------------------------------+------------------+---------------+------------------+----------------+
+
+					2018-04-20 08:58:37,830 - xtesting.ci.run_tests - INFO - Execution exit value: Result.EX_OK
+					</code></pre>
+				</section>
+				<section>
+					<pre><code data-trim data-noescape>
+						2018-04-20 10:59:50,878 - xtesting.ci.run_tests - INFO - Xtesting report:
+
+						+----------------------+------------------+--------------+------------------+----------------+
+						|      TEST CASE       |     PROJECT      |     TIER     |     DURATION     |     RESULT     |
+						+----------------------+------------------+--------------+------------------+----------------+
+						|     cloudify_ims     |     functest     |     vnf      |      33:57       |      PASS      |
+						|     vyos_vrouter     |     functest     |     vnf      |      09:54       |      FAIL      |
+						|       juju_epc       |     functest     |     vnf      |      64:10       |      PASS      |
+						+----------------------+------------------+--------------+------------------+----------------+
+
+						2018-04-20 10:59:50,881 - xtesting.ci.run_tests - INFO - Execution exit value: Result.EX_ERROR
+				</code></pre>
+			</section>
 
 					<section data-markdown>
 						<textarea data-template>
@@ -287,9 +325,9 @@
 					<section data-markdown>
 						<textarea data-template>
 							### vProbe use case
-							![stat](./img/vprobe.png)
+							![stat](./img/astelia.png)
 						</textarea>
-					</section>					
+					</section>
 					<section data-markdown>
 						<textarea data-template>
 							## Example 2
@@ -315,7 +353,7 @@
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							### NBI (Nothbound Interface)
+							### NBI (Northbound Interface)
 							* Introduced in Beijing
 							* Project: externalapi https://git.onap.org/externalapi/nbi/
 							* Implementation of TMF APIs
@@ -337,17 +375,22 @@
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							### Network Service Catalog
+							#### Network Service Catalog
 							![stat](./img/nbi-2.png)
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							### Network Service Orders
+							#### Network Service Orders
+							![stat](./img/nbi-3.png)
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							#### Network Service instances
 							![stat](./img/nbi-4.png)
 						</textarea>
 					</section>
-						
 					<section data-markdown>
 						<textarea data-template>
 							## Example 4
@@ -373,6 +416,17 @@
 							* Integrate such testing in daily CI/CD chains
 						</textarea>
 					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							Type "help", "copyright", "credits" or "license" for more information.
+							>>> import onap_tests.scenario.solution as solution
+							>>> solution_mgr = solution.Solution(case="ims")
+							INFO:onap_tests.scenario.solution:get VNF Clearwater 0 info
+							INFO:onap_tests.scenario.solution:Complete Module info for VNF Clearwater 0
+							>>> solution_mgr.instantiate()
+							INFO:onap_tests.scenario.solution: VNF successfully created
+						</code></pre>
+					</section>
 					<section data-markdown>
 						<textarea data-template>
 							## Example 5
@@ -389,11 +443,22 @@
 							* https://github.com/Orange-OpenSource/xtesting-onap-robot
 						</textarea>
 					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## ONAP XTesting results
-							![stat](./img/onap_xtesting_results.png)
-						</textarea>
+					<section>
+						<pre><code data-trim data-noescape>
+									2018-05-14 07:13:17,812 - xtesting.ci.run_tests - INFO - Xtesting report:
+
+									+---------------------------+------------------+--------------+------------------+----------------+
+									|         TEST CASE         |     PROJECT      |     TIER     |     DURATION     |     RESULT     |
+									+---------------------------+------------------+--------------+------------------+----------------+
+									|     robot_healthcheck     |     functest     |     onap     |      00:01       |      PASS      |
+									|         robot_api         |     functest     |     onap     |      00:00       |      FAIL      |
+									|         robot_dcae        |     functest     |     onap     |      00:00       |      FAIL      |
+									|      robot_multicloud     |     functest     |     onap     |      00:00       |      PASS      |
+									|       robot_3rdparty      |     functest     |     onap     |      00:01       |      PASS      |
+									+---------------------------+------------------+--------------+------------------+----------------+
+
+									2018-05-14 07:13:17,817 - xtesting.ci.run_tests - INFO - Execution exit value: Result.EX_ERROR
+							</code></pre>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
